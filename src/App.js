@@ -1,25 +1,30 @@
-import{RouterProvider, createBrowserRouter} from "react-router-dom";
+import React from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./Navigation/Login";
 import Register from "./Navigation/Register";
-const router= createBrowserRouter([
+import { UserAuthContextProvider } from "./context/userAuthContext"; // Import UserAuthContextProvider
+
+const router = createBrowserRouter([
   {
-    path:'/',
-    element:(<Home></Home>)
+    path: '/',
+    element: (<Home />)
   },
   {
-    path:'/login',
-    element:(<Login></Login>)
-  },{
-    path:'/register',
-    element:(<Register></Register>)
+    path: '/login',
+    element: (<Login />)
+  },
+  {
+    path: '/register',
+    element: (<Register />)
   }
-])
+]);
+
 function App() {
   return (
-   <>
-    <RouterProvider router={router}/>
-   </>
+    <UserAuthContextProvider> {/* Wrap your router setup within UserAuthContextProvider */}
+      <RouterProvider router={router} />
+    </UserAuthContextProvider>
   );
 }
 
