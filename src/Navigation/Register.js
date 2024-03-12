@@ -6,7 +6,7 @@ import { FaBook } from "react-icons/fa";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useUserAuth } from "../context/userAuthContext";
-
+import { IoClose } from "react-icons/io5";
 const Register = () => {
   const [flag, setFlag] = useState(false);
   const [name, setName] = useState("");
@@ -15,7 +15,7 @@ const Register = () => {
   const [con_pswd, setCon_pswd] = useState("");
   const [otp, setOtp] = useState("");
   const [confirmObj, setConfirmObj] = useState("");
- 
+ const navigate=useNavigate();
 
   const [peye, setPeye] = useState(false);
   const toggle = () => {
@@ -48,28 +48,30 @@ const Register = () => {
       return;
     }
   };
-  // const verifyOTP = async (e) => {
-  //   e.preventDefault();
-  //   setLoading1(true);
-  //   if (otp === "" || otp === undefined) {
-  //     alert("OTP is undefined");
-  //     return;
-  //   }
-  //   try {
-  //     await confirmObj.confirm(otp);
-  //     navigate("/");
-  //   } catch (err) {
-  //     console.log(err.message);
-  //   }
-  // };
+  const handleOTP = async (e) => {
+    e.preventDefault();
+    // setLoading1(true);
+    if (otp === "" || otp === undefined) {
+      alert("OTP is undefined");
+      return;
+    }
+    try {
+      await confirmObj.confirm(otp);
+      navigate("/");
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
   return (
     <>
       <section
+      
         className={`bg-gray-50 min-h-screen flex items-center justify-center ${
           flag ? "hidden" : "flex"
         }`}
       >
         <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+        
           <div className="md:w-1/2 px-8 md:px-16">
             <h2 className="font-bold text-2xl text-[#002D74]">Sign Up</h2>
 
@@ -152,7 +154,8 @@ const Register = () => {
             </div>
           </div>
 
-          <div className="md:block hidden w-1/2">
+          <div className="md:block hidden w-1/2 relative">
+            <div className="absolute top-0 right-0 bg-black rounded-full"><Link to={'/'}><IoClose size={35} color="white"/></Link></div>
             <img
               className="rounded-2xl"
               src="https://images.unsplash.com/photo-1616606103915-dea7be788566?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
@@ -168,24 +171,28 @@ const Register = () => {
         }`}
       >
         <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+          <form onSubmit={handleOTP}>
           <div className="flex flex-col justify-center items-center gap-5">
             <FaBook size={35} className="text-green-600 cursor-pointer" />
             <h1 className=" font-bold text-2xl text-[#002D74]">
               Mobile Phone Verification
             </h1>
             <p className="text-center">
-              Enter the 4-digit verification code that was sent to <br /> your
+              Enter the 6-digit verification code that was sent to <br /> your
               phone number.
             </p>
             <input
               type="text"
               inputMode="numeric"
               placeholder="Enter OTP"
-              maxLength={4}
+              maxLength={6}
+              name="otp"
+              id="otp"
+              onChange={(e)=>{setOtp(e.target.value)}}
               autoFocus
               className="w-full h-9 text-center border border-gray-400  px-3 rounded-md outline-8"
             />
-            <button className="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300 w-full">
+            <button type="submit" className="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300 w-full">
               Verify Account
             </button>
             <p>
@@ -195,6 +202,7 @@ const Register = () => {
               </a>
             </p>
           </div>
+          </form>
         </div>
       </section>
     </>

@@ -4,6 +4,11 @@ import Home from "./components/Home";
 import Login from "./Navigation/Login";
 import Register from "./Navigation/Register";
 import { UserAuthContextProvider } from "./context/userAuthContext"; // Import UserAuthContextProvider
+import Products from "./components/Products";
+import Books from "./components/Books";
+import Profile from "./components/Profile";
+import Cart from "./components/Cart";
+import ProtectedRoute from "./Navigation/Protected_Route";
 
 const router = createBrowserRouter([
   {
@@ -17,12 +22,28 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: (<Register />)
-  }
+  },
+  {
+    path:'/products',
+    element:(<Products></Products>)
+  },
+  {
+    path:'/books',
+    element:(<Books></Books>)
+  },
+  {
+    path:'/cart',
+    element:(<ProtectedRoute><Cart></Cart></ProtectedRoute>)
+  },
+  {
+    path:'/profile',
+    element:(<ProtectedRoute><Profile></Profile></ProtectedRoute>)
+  },
 ]);
 
 function App() {
   return (
-    <UserAuthContextProvider> {/* Wrap your router setup within UserAuthContextProvider */}
+    <UserAuthContextProvider> 
       <RouterProvider router={router} />
     </UserAuthContextProvider>
   );
