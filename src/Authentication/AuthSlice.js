@@ -3,7 +3,7 @@ import {CreateAccount } from "./AuthApi";
 
 const initialState = {
   status: "idle",
-  user: "rishi",
+  user: 'rishi',
 };
 export const CreateAccountAsync = createAsyncThunk(
     "Auth/CreateAccount",

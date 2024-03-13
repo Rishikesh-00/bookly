@@ -3,6 +3,7 @@ import{useSelector} from 'react-redux';
 import { loggeduser } from '../Authentication/AuthSlice';
 const Protected_Route=({children})=>{
     const user=useSelector(loggeduser);
+    // const user="";
     if(!user) return <Navigate to="/login"></Navigate>
     return children;
 }
