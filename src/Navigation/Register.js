@@ -7,6 +7,8 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useUserAuth } from "../context/userAuthContext";
 import { IoClose } from "react-icons/io5";
+import { CreateAccountAsync } from "../Authentication/AuthSlice";
+import { useDispatch } from "react-redux";
 const Register = () => {
   const [flag, setFlag] = useState(false);
   const [name, setName] = useState("");
@@ -16,7 +18,7 @@ const Register = () => {
   const [otp, setOtp] = useState("");
   const [confirmObj, setConfirmObj] = useState("");
  const navigate=useNavigate();
-
+ const dispatch =useDispatch();
   const [peye, setPeye] = useState(false);
   const toggle = () => {
     setPeye(!peye);
@@ -39,14 +41,15 @@ const Register = () => {
       alert("Password doesn't match!");
       return;
     }
-    try {
-      const response=await setRecatcha(number);
-      setConfirmObj(response);
     setFlag(!flag);
-    } catch (err) {
-      console.log(err.message);
-      return;
-    }
+    // try {
+    //   const response=await setRecatcha(number);
+    //   setConfirmObj(response);
+    // setFlag(!flag);
+    // } catch (err) {
+    //   console.log(err.message);
+    //   return;
+    // }
   };
   const handleOTP = async (e) => {
     e.preventDefault();
@@ -56,7 +59,10 @@ const Register = () => {
       return;
     }
     try {
-      await confirmObj.confirm(otp);
+      // await confirmObj.confirm(otp);
+      dispatch(CreateAccountAsync({Phone_number:number,username:name,Password:pswd}))
+      
+      console.log("signup called")
       navigate("/");
     } catch (err) {
       console.log(err.message);
