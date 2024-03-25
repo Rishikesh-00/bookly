@@ -17,7 +17,8 @@ const App = () => {
   const Navigate=useNavigate();
   const handlesubmit = (e) => {
     e.preventDefault();
-    dispatch(LoginuserAsync({Phone_Number:number,Password:password}))
+    dispatch(LoginuserAsync({Phone_Number:number,password:password}))
+    alert('login')
     Navigate('/')
   };
   return (

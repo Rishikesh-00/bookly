@@ -9,8 +9,8 @@ export default function Navbar() {
 
   return (
     <div
-      className="flex justify-evenly items-center gap-6 h-20  w-full "
-      style={{ backgroundColor: "#F0F8FF" }}
+      className="flex justify-evenly items-center gap-6 h-20  w-full fixed bg-green-100 "
+      
     >
       <div className="hidden md:flex justify-evenly gap-6 ">
         <div>

@@ -5,7 +5,7 @@ export async function CreateAccount(userdata){
             body:JSON.stringify(userdata),
             headers:{'content-type':'application/json'}
         })
-        const data=response.json();
+        const data= response.json();
        resolve({data});
     })
 }
