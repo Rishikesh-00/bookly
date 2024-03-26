@@ -57,7 +57,7 @@ export default function Navbar() {
             className="cursor-pointer"
             onClick={() => setProfile(!profile)}
           /></Link>
-          <div className="absolute my-8 ml-10 ">
+          {/* <div className="absolute my-8 ml-10 ">
             <ul
               className={`${profile ? 'flex' : 'hidden'} flex-col justify-center items-center p-2 gap-2 ml-[-4rem] w-24 rounded`}
               style={{ backgroundColor: "#F0F8FF" }}
@@ -67,7 +67,7 @@ export default function Navbar() {
               <li><Link to="/">Orders</Link></li>
               <li><Link to="/">Logout</Link></li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

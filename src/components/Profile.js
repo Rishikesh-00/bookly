@@ -1,18 +1,30 @@
-import React from 'react'
-import Navbar from '../Navigation/Navbar'
-import ProfileNavigation from '../Navigation/ProfileNavigation'
+import React from "react";
+import Navbar from "../Navigation/Navbar";
+import ProfileNavigation from "../Navigation/ProfileNavigation";
+import Order from "../Profile_Pages.js/Order";
+import Address from "../Profile_Pages.js/Address";
+import { useSelector } from "react-redux";
+import { activestate } from "../Authentication/AuthSlice";
 
 export default function Profile() {
+  const active = useSelector(activestate);
   return (
-    <div>
-      <div className='fixed w-full'>
-      <Navbar></Navbar>
-      <div className='grid grid-cols-4 pt-20'>
-         <div className='fixed w-1/4'>
-         <ProfileNavigation/>
-         </div>
-      </div>
+    <div className="w-full">
+      <Navbar />
+      <div className=" pt-20">
+        <div className="col-span-1">
+          <ProfileNavigation />
+        </div>
+        <div
+          className=""
+          style={{ display: active === "order" ? "block" : "none" }}
+        >
+          <Order />
+        </div>
+        <div  className='' style={{display:active==="Address"?"block":"none"}}>
+        <Address/>
+        </div>
       </div>
     </div>
-  )
+  );
 }

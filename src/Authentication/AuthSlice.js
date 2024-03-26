@@ -6,6 +6,7 @@ const initialState = {
   user: null,
   error:null,
   userExist:false,
+  Active:"order",
 };
 export const CreateAccountAsync = createAsyncThunk(
     "Auth/CreateAccount",
@@ -36,6 +37,14 @@ export const CreateAccountAsync = createAsyncThunk(
       return response.data;
     }
   );
+    export const changeProfileNavigationAsync=createAsyncThunk(
+      "Auth/Navigation", async(userdata)=>{
+        return userdata;
+      }
+    )
+
+
+
 
 export const AuthSlice = createSlice({
     name:'Auth',
@@ -74,8 +83,12 @@ export const AuthSlice = createSlice({
           state.status='idle';
           state.user=actions.payload;
          })
+         .addCase(changeProfileNavigationAsync.fulfilled,(state,actions)=>{
+          state.Active=actions.payload;
+         })
     }
 })
 
 export const loggeduser = (state) => state.Auth.user;
+export const activestate=(state)=>state.Auth.Active;
 export default AuthSlice.reducer
