@@ -19,7 +19,9 @@ export default {
     fontFamily:{
       fontFamily:"'Playfair Display',sarif",
       lato:"'Lato',sans-sarif",
-    }
+    },
   },
-  plugins: [],
+  plugins: [
+    // require('@tailwindcss/forms'),
+  ],
 }

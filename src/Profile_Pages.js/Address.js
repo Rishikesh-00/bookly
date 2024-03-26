@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import Address_Component from '../Small_Components/Address_Components'
+import React, { useState } from 'react';
+import Address_Component from '../Small_Components/Address_Components';
 
 export default function Address() {
     const [flag, SetFlag] = useState(true)
@@ -41,7 +41,7 @@ export default function Address() {
                         <path opacity="0.4" d="M9.5 17H26.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M18 25.5V8.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <p onClick={() => SetFlag(!flag)} className='cursor-pointer'> Add new Address</p>
+                    <p onClick={() => SetFlag(!flag)} className='cursor-pointer '> Add new Address</p>
                 </div>
 
                 {Addresses === "" ? <p className='grid grid-cols-3 justify-center items-center '>No Address</p> :
@@ -146,7 +146,7 @@ export default function Address() {
                                 name="city"
                                 id="city"
                                 autoComplete="address-level2"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className=" cursor-pointer block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
@@ -187,7 +187,7 @@ export default function Address() {
                     </button>
                     <button
                         type="submit"
-                        className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        className="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     >
                         Save
                     </button>
