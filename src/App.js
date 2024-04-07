@@ -9,6 +9,7 @@ import Books from "./components/Books";
 import Profile from "./components/Profile";
 import Cart from "./components/Cart";
 import ProtectedRoute from "./Navigation/Protected_Route";
+// import Test from "./components/Test";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,9 @@ function App() {
     <UserAuthContextProvider> 
       <RouterProvider router={router} />
     </UserAuthContextProvider>
+    // <>
+    //   <Test/>
+    // </>
   );
 }
 

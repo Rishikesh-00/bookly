@@ -60,7 +60,7 @@ const Register = () => {
     }
     try {
       // await confirmObj.confirm(otp);
-      dispatch(CreateAccountAsync({Phone_Number:number,username:name,password:pswd}))
+      dispatch(CreateAccountAsync({Phone_Number:number,Username:name,password:pswd}))
       navigate("/");
       console.log("signed up")
     } catch (err) {

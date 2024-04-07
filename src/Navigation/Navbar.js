@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <div
-      className="flex justify-evenly items-center gap-6 h-20  w-full fixed bg-green-100 "
+      className="flex justify-evenly items-center gap-6 h-20  w-full fixed bg-green-100 z-50"
       
     >
       <div className="hidden md:flex justify-evenly gap-6 ">
@@ -28,7 +28,7 @@ export default function Navbar() {
       </div>
       <div className="font-extrabold font-lato cursor-pointer">
         <FaBook size={35} className=" text text-green-600 cursor-pointer lg:hidden md:hidden" />
-        <Link to="/" className="hidden lg:flex">Bookly.com</Link>
+        <Link to="/" className="font-signature hidden lg:flex">Bookly.com</Link>
 
       </div>
       <div className="flex justify-evenly gap-6">

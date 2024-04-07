@@ -36,7 +36,7 @@ export default function Address_Component({ data }) {
         </div>
       </div>
       <div className='flex flex-col justify-center items-center'>
-        <button className='bg-gray-green text-white py-2 px-6 rounded-full mb-2'>Edit Address</button>
+        <button className='bg-gray-green text-white py-2 px-6 w-40 rounded-full mb-2'>Edit Address</button>
         <button className='bg-red-300 hover:bg-red-500 text-white py-2 px-6 rounded-full'>Delete Address</button>
       </div>
     </div>

@@ -4,37 +4,39 @@ import Address_Component from '../Small_Components/Address_Components';
 export default function Address() {
     const [flag, SetFlag] = useState(true)
     const Addresses = [{
-        Name: "Sameer kumar",
-        Primary_Contact_Number: "9334218721",
-        Secondary_Contact_Number: "9334218721",
-        Street: "P C College",
-        District: "Buxar",
-        State: "Bihar",
+        Name: "Rishikesh",
+        Primary_Contact_Number: "1234567890",
+        Secondary_Contact_Number: "1234567890",
+        Street: "VGU , jaipur",
+        District: "jaipur",
+        State: "jaipur",
         Pincode: "802103",
     },
     {
-        Name: "Sameer kumar",
-        Primary_Contact_Number: "9334218721",
-        Secondary_Contact_Number: "9334218721",
-        Street: "P C College",
-        District: "Buxar",
-        State: "Bihar",
+        Name: "Rishikesh",
+        Primary_Contact_Number: "1234567890",
+        Secondary_Contact_Number: "1234567890",
+        Street: "VGU , jaipur",
+        District: "jaipur",
+        State: "jaipur",
         Pincode: "802103",
     },
     {
-        Name: "Sameer kumar",
-        Primary_Contact_Number: "9334218721",
-        Secondary_Contact_Number: "9334218721",
-        Street: "P C College",
-        District: "Buxar",
-        State: "Bihar",
+        Name: "Rishikesh",
+        Primary_Contact_Number: "1234567890",
+        Secondary_Contact_Number: "1234567890",
+        Street: "VGU , jaipur",
+        District: "jaipur",
+        State: "jaipur",
         Pincode: "802103",
     }]
 
 
 
     return (
-        <div className=' bg-green-50 px-16 py-16'>
+        <>
+            {/* <h1>Profile</h1> */}
+            <div className=' bg-green-50 px-16 py-16'>
             <div style={{ display: flag ? "block" : "none" }}>
                 <div className='flex justify-end items-center mb-8 sansita-regular text-gray-green text-xl'>
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +70,7 @@ export default function Address() {
                                 name="first-name"
                                 id="first-name"
                                 autoComplete="given-name"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="block pl-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
@@ -83,7 +85,7 @@ export default function Address() {
                                 name="last-name"
                                 id="last-name"
                                 autoComplete="family-name"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="block pl-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
@@ -98,13 +100,13 @@ export default function Address() {
                                 name="email"
                                 type="email"
                                 autoComplete="email"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="block pl-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
 
                     <div className="sm:col-span-3">
-                        <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                        <label htmlFor="country" className="block pl-2 text-sm font-medium leading-6 text-gray-900">
                             Country
                         </label>
                         <div className="mt-2">
@@ -131,7 +133,7 @@ export default function Address() {
                                 name="street-address"
                                 id="street-address"
                                 autoComplete="street-address"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="block pl-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
@@ -146,7 +148,7 @@ export default function Address() {
                                 name="city"
                                 id="city"
                                 autoComplete="address-level2"
-                                className=" cursor-pointer block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className=" cursor-pointer pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
@@ -161,7 +163,7 @@ export default function Address() {
                                 name="region"
                                 id="region"
                                 autoComplete="address-level1"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="block w-full pl-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
@@ -176,7 +178,7 @@ export default function Address() {
                                 name="postal-code"
                                 id="postal-code"
                                 autoComplete="postal-code"
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="block w-full pl-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
@@ -195,5 +197,6 @@ export default function Address() {
             </div>
 
         </div>
+        </>
     )
 }

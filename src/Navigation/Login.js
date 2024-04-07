@@ -18,7 +18,6 @@ const App = () => {
   const handlesubmit = (e) => {
     e.preventDefault();
     dispatch(LoginuserAsync({Phone_Number:number,password:password}))
-    alert('login')
     Navigate('/')
   };
   return (
@@ -113,7 +112,6 @@ const App = () => {
           </div>
         </div>
 
-        {/* image */}
         <div className="md:block hidden w-1/2 relative">
           <div className="absolute top-0 right-0 bg-black rounded-full">
             <Link to={"/"}>

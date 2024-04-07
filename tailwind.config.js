@@ -18,6 +18,7 @@ export default {
     },
     fontFamily:{
       fontFamily:"'Playfair Display',sarif",
+      signature:'Great Vibes',
       lato:"'Lato',sans-sarif",
     },
   },
