@@ -16,10 +16,10 @@ export default function Footer() {
         <div className="mb-4 lg:mb-0">
           <h3 className="text-lg font-bold mb-2">Navigation</h3>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Books</a></li>
+            <li><a href="/">About Us</a></li>
+            <li><a href="/">Contact Us</a></li>
           </ul>
         </div>
 
@@ -30,6 +30,8 @@ export default function Footer() {
           <p>Location: 1234 Bookly.com Lane, jaipur,Rajasthan,India</p>
         </div>
       </div>
+      <hr className="my-4 border-t border-gray-400" />
+      <div className="text-center text-sm mt-4">© 2024 Bookly.com. All rights reserved.</div>
     </footer>
     </div>
   )

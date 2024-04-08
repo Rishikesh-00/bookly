@@ -3,7 +3,7 @@ import React from 'react';
 export default function SectionTwo() {
   return (
     <div>
-      <div className=' flex justify-center flex-col items-center bg-blue-100 pt-2 pb-8  pl-8 pr-10 lg:mt-10 '>
+      <div className=' flex justify-center flex-col items-center bg-blue-200 pt-2 pb-8  pl-8 pr-10 lg:mt-10 '>
         <p className='pt-2 text-3xl sansita-regular-italic text-center underline'>Category</p> <br />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <div className="relative">
