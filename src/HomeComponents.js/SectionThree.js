@@ -38,6 +38,7 @@ export default function SectionThree() {
     <div className=''>
       <div className='flex flex-col justify-center items-center bg-gray p-2 pl-20 pr-20 '>
         <p className='pt-20 text-3xl sansita-regular-italic underline'>Catalog</p>
+
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 md:flex-row'>
           {/* left div */}
           <div className=' flex justify-center items-center flex-col'>

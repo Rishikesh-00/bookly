@@ -1,11 +1,12 @@
 
 // import React from 'react'
 import Navbar from '../Navigation/Navbar'
-
+// import Footer from "../HomeComponents/Footer"
 import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import {  ChevronDownIcon} from "@heroicons/react/24/outline";
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import Footer from '../HomeComponents.js/Footer';
 
 // const items = [
 //   { id: 1, title: 'Back End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
@@ -175,7 +176,7 @@ export default function Books() {
             <img
               src={data.image}
               alt="Product"
-              className="h-60 w-72 object-cover rounded-t-xl"
+              className="h-60 w-72  object-cover   rounded-t-xl" 
             />
             <div className="px-4 py-3 w-64 ">
               <span className="  text-lg font-bold text-black truncate block capitalize">{data.title}</span>
@@ -312,6 +313,7 @@ export default function Books() {
         </div>
       </div>
     </div>
+    <Footer/>
     </div>
   )
 }

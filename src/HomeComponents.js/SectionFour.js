@@ -3,7 +3,7 @@ import React from 'react'
 export default function SectionFour() {
     return (
       
-            <div className='pt-8 p-4 bg-lime-200'>
+            <div className='pt-8 p-4 ' style={{backgroundColor:"#E3E6F3"}}>
 
                 <p className='text-3xl sansita-regular-italic text-center underline'>Trending On Top</p>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:h-[80vh]'>
@@ -21,7 +21,7 @@ export default function SectionFour() {
                         </div>
                     </div>
                     <div className='flex justify-center items-center order-first md:order-none'>
-                        <img className='rounded' src="https://cdn.pixabay.com/photo/2017/09/21/13/32/girl-2771936_1280.jpg" alt="book reading pic" style={{ height: "90%" }} />
+                        <img className='rounded' src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="book reading pic" style={{ height: "90%" }} />
                     </div>
                 </div>
             </div>

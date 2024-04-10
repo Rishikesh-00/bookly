@@ -7,12 +7,14 @@ import SectionThree from '../HomeComponents.js/SectionThree';
 import SectionFour from '../HomeComponents.js/SectionFour';
 import SectionFive from '../HomeComponents.js/SectionFive';
 import Footer from '../HomeComponents.js/Footer';
+import Add from '../HomeComponents.js/Advertisment';
 
 export default function Home() {
   return (
     <div className=''>
       <Navbar />
       <SectionOne/>
+      <Add/>
       <SectionTwo/>
       <SectionThree/>
       <SectionFour/>

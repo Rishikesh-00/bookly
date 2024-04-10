@@ -4,11 +4,13 @@ import Home from "./components/Home";
 import Login from "./Navigation/Login";
 import Register from "./Navigation/Register";
 import { UserAuthContextProvider } from "./context/userAuthContext"; // Import UserAuthContextProvider
-import Products from "./components/Products";
+import Featured from "./components/Featured";
 import Books from "./components/Books";
 import Profile from "./components/Profile";
-import Cart from "./components/Cart";
+import Cart from "./Small_Components/Product_details";
+// import Cart from "./components/Featured";
 import ProtectedRoute from "./Navigation/Protected_Route";
+import Product_details from "./Small_Components/Product_details";
 // import Test from "./components/Test";
 
 const router = createBrowserRouter([
@@ -25,8 +27,8 @@ const router = createBrowserRouter([
     element: (<Register />)
   },
   {
-    path:'/products',
-    element:(<Products></Products>)
+    path:'/featured',
+    element:(<Product_details/>)
   },
   {
     path:'/books',
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
     path:'/profile',
     element:(<Profile></Profile>)
   },
+  {
+    path:'/product-details',
+    element:(<Product_details/>)
+  }
 ]);
 
 function App() {

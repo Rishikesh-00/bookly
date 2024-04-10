@@ -2,12 +2,12 @@ import React from 'react'
 
 export default function SectionFive() {
   return (
-    <div className='pt-8 p-4 bg-lime-200'>
+    <div className='pt-8 p-4 bg-lime-200'  style={{backgroundColor:"#E3E6F3"}}>
 
                 {/* <p className='text-3xl sansita-regular-italic text-center underline'>Trending On Top</p> */}
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:h-[80vh]'>
                 <div className='flex justify-center items-center order-first md:order-none'>
-                        <img className='rounded' src="https://cdn.pixabay.com/photo/2017/09/21/13/32/girl-2771936_1280.jpg" alt="book reading pic" style={{ height: "90%" }} />
+                        <img className='rounded h-[30rem]' src="https://images.pexels.com/photos/2228586/pexels-photo-2228586.jpeg?auto=compress&cs=tinysrgb&w=600" alt="book reading pic"  />
                     </div>
 
                     <div className='flex flex-col justify-center items-center md:pl-10'>

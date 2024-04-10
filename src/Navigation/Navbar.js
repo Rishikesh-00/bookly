@@ -3,13 +3,13 @@ import { FaBook } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CiShoppingCart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
-
+import '../css/main.css'
 export default function Navbar() {
   const [profile, setProfile] = useState(false);
 
   return (
     <div
-      className="flex justify-evenly items-center gap-6 h-20  w-full fixed bg-green-100 z-50"
+      className="flex justify-evenly items-center gap-6 h-20  w-full fixed bg-green-100 z-50" style={{backgroundColor:"#E3E6F3"}}
       
     >
       <div className="hidden md:flex justify-evenly gap-6 ">
@@ -23,12 +23,12 @@ export default function Navbar() {
           <Link to={'/books'}>Books</Link>
         </div>
         <div>
-          <Link to={'/products'}>Featured</Link>
+          <Link to={'/featured'}>Featured</Link>
         </div>
       </div>
       <div className="font-extrabold font-lato cursor-pointer">
         <FaBook size={35} className=" text text-green-600 cursor-pointer lg:hidden md:hidden" />
-        <Link to="/" className="font-signature hidden lg:flex">Bookly.com</Link>
+        <Link to="/" className="hidden satisfy text-2xl lg:flex">Bookly.com</Link>
 
       </div>
       <div className="flex justify-evenly gap-6">
