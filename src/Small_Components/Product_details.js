@@ -8,7 +8,7 @@ export default function Product_details() {
   const [selectedimage, setSelectedImage] = useState(1);
   const selectedProduct = {
     _id: "64b76d3b47e0f640d4f70651",
-    title: "Harry Potter",
+    title: "HARRY POTTER And The Order Of The Phoenix ",
     description: "Harry had always been small and skinny for his age… Harry had a thin face, knobbly knees, black hair and bright green eyes. He wore round glasses held together with a lot of cellotape because of all the times Dudley had punched him in the nose",
     price: 999.99,
     discountPercentage: 67,
@@ -115,7 +115,7 @@ export default function Product_details() {
       {/* navbar */}
       <Navbar />
       {/* Product details page */}
-      <div className="font-poppins bg-gray-100 h-screen pt-16">
+      <div className="font-poppins bg-gray-100 h-full pt-16 ">
         <div className="container mx-auto ">
           <div className="cart bg-white rounded-lg  p-8 md:p-12">
             <div className="md:flex md:items-center md:justify-between">
@@ -130,7 +130,7 @@ export default function Product_details() {
                 <div className="flex gap-[1.5rem]  ">
                   {selectedProduct.images.map((img, index) => {
                     return (
-                      <img src={img} alt="product" className="w-[7rem] h-[7rem] rounded-lg small-img border p-1 cursor-pointer" onClick={() => { setSelectedImage(index) }} />
+                      <img src={img} alt="product" className=" h-20 w-20 md:w-[4rem] md:h-[4rem] lg:w-[7rem] lg:h-[7rem] rounded-lg small-img border p-1 cursor-pointer" onClick={() => { setSelectedImage(index) }} />
                     )
                   })}
 

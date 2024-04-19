@@ -14,6 +14,7 @@ export default {
         "dark-orange-1000":"#FF7800",
         "dark-red":"#8F4300",
         "sletiy":"#E8E8E8",
+        "button-color":"#E1E1E1"
       },
     },
     fontFamily:{

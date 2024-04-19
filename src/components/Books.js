@@ -185,11 +185,11 @@ export default function Books() {
               </p>
               <div className=" flex items-center justify-between ">
                 <div className="flex items-center ">
-                  <p className="text-lg font-semibold text-black cursor-auto my-3">
+                  <p className="text-lg font-semibold text-black cursor-auto my-3">&#8377; 
                   {Math.round(data.price - (data.price * data.discountPercentage / 100))}
                   </p>
                   <del>
-                    <p className="text-sm text-gray-600 cursor-auto ml-2">{data.price}</p>
+                    <p className="text-sm text-gray-600 cursor-auto ml-2">&#8377; {data.price}</p>
                   </del>
                 </div>
                 <div className='bg-green-200 p-2 rounded-full'>
@@ -222,10 +222,9 @@ export default function Books() {
         </div>
           )
         })}
-
+        </div>
         {/* cart 1 ends here */}
 
-      </div>
 
       {/* pagination */}
       <div className="flex items-center justify-between  bg-white px-4 py-3 sm:px-6">

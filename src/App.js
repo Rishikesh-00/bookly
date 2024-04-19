@@ -3,15 +3,13 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./Navigation/Login";
 import Register from "./Navigation/Register";
-import { UserAuthContextProvider } from "./context/userAuthContext"; // Import UserAuthContextProvider
+import { UserAuthContextProvider } from "./context/userAuthContext"; 
 import Featured from "./components/Featured";
 import Books from "./components/Books";
+import Cart from "./components/Cart";
 import Profile from "./components/Profile";
-import Cart from "./Small_Components/Product_details";
-// import Cart from "./components/Featured";
 import ProtectedRoute from "./Navigation/Protected_Route";
 import Product_details from "./Small_Components/Product_details";
-// import Test from "./components/Test";
 
 const router = createBrowserRouter([
   {
@@ -26,17 +24,18 @@ const router = createBrowserRouter([
     path: '/register',
     element: (<Register />)
   },
-  {
-    path:'/featured',
-    element:(<Product_details/>)
-  },
+  // {
+  //   path:'/featured',
+  //   element:(<Product_details/>)
+  // },
   {
     path:'/books',
     element:(<Books></Books>)
   },
   {
     path:'/cart',
-    element:(<ProtectedRoute><Cart></Cart></ProtectedRoute>)
+    // element:(<ProtectedRoute><Cart></Cart></ProtectedRoute>)
+    element:(<Cart/>)
   },
   {
     path:'/profile',
@@ -53,9 +52,7 @@ function App() {
     <UserAuthContextProvider> 
       <RouterProvider router={router} />
     </UserAuthContextProvider>
-    // <>
-    //   <Test/>
-    // </>
+    
   );
 }
 
