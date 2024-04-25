@@ -9,7 +9,7 @@ import Books from "./components/Books";
 import Cart from "./components/Cart";
 import Profile from "./components/Profile";
 import ProtectedRoute from "./Navigation/Protected_Route";
-import Product_details from "./Small_Components/Product_details";
+import Productdetails from "./Small_Components/Product_details";
 
 const router = createBrowserRouter([
   {
@@ -24,26 +24,23 @@ const router = createBrowserRouter([
     path: '/register',
     element: (<Register />)
   },
-  // {
-  //   path:'/featured',
-  //   element:(<Product_details/>)
-  // },
+ 
   {
     path:'/books',
     element:(<Books></Books>)
   },
   {
     path:'/cart',
-    // element:(<ProtectedRoute><Cart></Cart></ProtectedRoute>)
-    element:(<Cart/>)
+    element:(<ProtectedRoute><Cart></Cart></ProtectedRoute>)
+    // element:(<Cart/>)
   },
   {
     path:'/profile',
-    element:(<Profile></Profile>)
+    element:(<ProtectedRoute><Profile/></ProtectedRoute>)
   },
   {
     path:'/product-details',
-    element:(<Product_details/>)
+    element:(<Productdetails/>)
   }
 ]);
 

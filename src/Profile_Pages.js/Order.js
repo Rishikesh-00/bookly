@@ -1,5 +1,5 @@
 import React from 'react'
-import Order_Components from '../Small_Components/Order_Components'
+import OrderComponents from '../Small_Components/Order_Components'
 
 export default function Order() {
     const order = [
@@ -55,7 +55,7 @@ export default function Order() {
     <div className='bg-green-50 px-20 py-20 flex justify-center items-center flex-col w-full'>
       {
         order.map((data)=>{
-            return <Order_Components data={data}/>
+            return <OrderComponents data={data}/>
         })
       }
     </div>

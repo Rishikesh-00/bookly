@@ -1,112 +1,106 @@
 
-// import React from 'react'
 import Navbar from '../Navigation/Navbar'
-// import Footer from "../HomeComponents/Footer"
 import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import {  ChevronDownIcon} from "@heroicons/react/24/outline";
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import Footer from '../HomeComponents.js/Footer';
+import { useSelector } from 'react-redux';
+import { TotalProducts } from '../Features/Product/ProductSlice';
 
-// const items = [
-//   { id: 1, title: 'Back End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
-//   { id: 2, title: 'Front End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
-//   { id: 3, title: 'User Interface Designer', department: 'Design', type: 'Full-time', location: 'Remote' },
-// ]
 const sortOptions = [
-  { name: 'Most Popular', href: '/', current: true },
-  { name: 'Best Rating', href: '/', current: false },
-  { name: 'Newest', href: '/', current: false },
-  { name: 'Price: Low to High', href: '/', current: false },
-  { name: 'Price: High to Low', href: '/', current: false },
+  { name: 'Best Rating',_sort:"rating",_order:'desc'},
+  { name: 'Price: Low to High', _sort:"price",_order:'asc' },
+  { name: 'Price: High to Low', _sort:"price",_order:'desc' },
 ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 export default function Books() {
-  const products = [
-    {
-      image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      title: "The Great Gatsby",
-      reviews: 120,
-      rating: 4.5,
-      price: 15.99,
-      discountPercentage: 10,
-      description: "The Great Gatsby is a novel by American author F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      title: "To Kill a Mockingbird",
-      reviews: 95,
-      rating: 4.8,
-      price: 12.50,
-      discountPercentage: 15,
-      description: "To Kill a Mockingbird is a novel by Harper Lee published in 1960. It was immediately successful, winning the Pulitzer Prize, and has become a classic of modern American literature."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Harry Potter and the Philosopher's Stone",
-      reviews: 200,
-      rating: 5.0,
-      price: 19.99,
-      discountPercentage: 20,
-      description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Harry Potter and the Philosopher's Stone",
-      reviews: 200,
-      rating: 5.0,
-      price: 19.99,
-      discountPercentage: 20,
-      description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Harry Potter and the Philosopher's Stone",
-      reviews: 200,
-      rating: 5.0,
-      price: 19.99,
-      discountPercentage: 20,
-      description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Harry Potter and the Philosopher's Stone",
-      reviews: 200,
-      rating: 5.0,
-      price: 19.99,
-      discountPercentage: 20,
-      description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Harry Potter and the Philosopher's Stone",
-      reviews: 200,
-      rating: 5.0,
-      price: 19.99,
-      discountPercentage: 20,
-      description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Harry Potter and the Philosopher's Stone",
-      reviews: 200,
-      rating: 5.0,
-      price: 19.99,
-      discountPercentage: 20,
-      description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Harry Potter and the Philosopher's Stone",
-      reviews: 200,
-      rating: 5.0,
-      price: 19.99,
-      discountPercentage: 20,
-      description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
-    },
-  ];
+  const products=useSelector(TotalProducts)
+  // const products = [
+  //   {
+  //     image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+  //     title: "The Great Gatsby",
+  //     reviews: 120,
+  //     rating: 4.5,
+  //     price: 15.99,
+  //     discountPercentage: 10,
+  //     description: "The Great Gatsby is a novel by American author F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby."
+  //   },
+  //   {
+  //     image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+  //     title: "To Kill a Mockingbird",
+  //     reviews: 95,
+  //     rating: 4.8,
+  //     price: 12.50,
+  //     discountPercentage: 15,
+  //     description: "To Kill a Mockingbird is a novel by Harper Lee published in 1960. It was immediately successful, winning the Pulitzer Prize, and has become a classic of modern American literature."
+  //   },
+  //   {
+  //     image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+  //     title: "Harry Potter and the Philosopher's Stone",
+  //     reviews: 200,
+  //     rating: 5.0,
+  //     price: 19.99,
+  //     discountPercentage: 20,
+  //     description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
+  //   },
+  //   {
+  //     image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+  //     title: "Harry Potter and the Philosopher's Stone",
+  //     reviews: 200,
+  //     rating: 5.0,
+  //     price: 19.99,
+  //     discountPercentage: 20,
+  //     description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
+  //   },
+  //   {
+  //     image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+  //     title: "Harry Potter and the Philosopher's Stone",
+  //     reviews: 200,
+  //     rating: 5.0,
+  //     price: 19.99,
+  //     discountPercentage: 20,
+  //     description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
+  //   },
+  //   {
+  //     image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+  //     title: "Harry Potter and the Philosopher's Stone",
+  //     reviews: 200,
+  //     rating: 5.0,
+  //     price: 19.99,
+  //     discountPercentage: 20,
+  //     description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
+  //   },
+  //   {
+  //     image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+  //     title: "Harry Potter and the Philosopher's Stone",
+  //     reviews: 200,
+  //     rating: 5.0,
+  //     price: 19.99,
+  //     discountPercentage: 20,
+  //     description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
+  //   },
+  //   {
+  //     image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+  //     title: "Harry Potter and the Philosopher's Stone",
+  //     reviews: 200,
+  //     rating: 5.0,
+  //     price: 19.99,
+  //     discountPercentage: 20,
+  //     description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
+  //   },
+  //   {
+  //     image: "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+  //     title: "Harry Potter and the Philosopher's Stone",
+  //     reviews: 200,
+  //     rating: 5.0,
+  //     price: 19.99,
+  //     discountPercentage: 20,
+  //     description: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J.K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, a young wizard who discovers his magical heritage."
+  //   },
+  // ];
   // const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   return (
     <div>
@@ -174,7 +168,7 @@ export default function Books() {
             <div className="w-64 h-[27rem] bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl  ">
           <a href="/">
             <img
-              src={data.image}
+              src={data.thumbnail}
               alt="Product"
               className="h-60 w-72  object-cover   rounded-t-xl" 
             />
@@ -185,12 +179,13 @@ export default function Books() {
               </p>
               <div className=" flex items-center justify-between ">
                 <div className="flex items-center ">
-                  <p className="text-lg font-semibold text-black cursor-auto my-3">&#8377; 
-                  {Math.round(data.price - (data.price * data.discountPercentage / 100))}
+                  <p className="text-lg font-semibold text-black cursor-auto my-3">&#8377;  
+                  {Math.round(data.price - (data.price * data.discountpercent/100))}
                   </p>
                   <del>
                     <p className="text-sm text-gray-600 cursor-auto ml-2">&#8377; {data.price}</p>
                   </del>
+                  <p className="text-xs text-green-600  cursor-auto ml-2">{data.discountpercent}% save</p>
                 </div>
                 <div className='bg-green-200 p-2 rounded-full'>
                   <svg

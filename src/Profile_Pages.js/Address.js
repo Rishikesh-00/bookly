@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Address_Component from '../Small_Components/Address_Components';
+import AddressComponent from '../Small_Components/Address_Components';
 
 export default function Address() {
     const [flag, SetFlag] = useState(true)
@@ -49,7 +49,7 @@ export default function Address() {
                 {Addresses === "" ? <p className='grid grid-cols-3 justify-center items-center '>No Address</p> :
                     Addresses.map((data) => {
                         return (
-                            <Address_Component data={data} />
+                            <AddressComponent data={data} />
                         )
                     })
                 }
